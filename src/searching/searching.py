@@ -13,31 +13,16 @@ def linear_search(arr, target):
 def binary_search(arr, target):
 
     # Your code here
+    l = 0
+    h = len(arr)
+    while l < h:
+        mid = (l + h) // 2
+        if arr[mid] == target:
+            return mid
+        elif target < arr[mid]:
+            h = mid
+        else:
+            l = mid + 1
 
     return -1  # not found
 
-
-# lo = 0
-# hi = len(arr)
-# while lo < hi:
-#    mid = (lo + hi) // 2
-
-#    if arr[mid] == target:
-#       return True
-#    elif target < arr[mid]:
-#       hi = mid
-#    else:
-#       lo = mid + 1
-
-# return False
-
-# def insertion_sort(arr):
-#    for i in range(1, len(arr)):
-#       temp = arr[i]
-#       j = i
-#       while j > 0 and temp < arr[j - 1]:
-#          arr[i] = arr[j - 1]
-#          j -= 1
-
-#       arr[j] = temp
-#    return arr
