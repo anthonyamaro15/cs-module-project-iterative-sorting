@@ -1,25 +1,28 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
-   #  len(arr) -1, is the number of operations
-    for i in range(0, len(arr) - 1):
-        if len(arr) == 0:
-            return []
-           # TO-DO: find next smallest element
-           # (hint, can do in 3 loc)
-           # Your code here
-        for j in range(len(arr) - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-           # TO-DO: swap
-           # Your code here
+    # Your code here
+    if len(arr) == 0:
+        return []
+
+    for i in range(len(arr)):
+        min_value = min(arr[i:])
+        min_index = arr.index(min_value)
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+   #  len(arr) - 1, this is the num of operations
+    for i in range(0, len(arr) - 1):
+        if len(arr) == 0:
+            return []
 
+        for j in range(len(arr) - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
 
@@ -42,7 +45,16 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 
 
-def counting_sort(arr, maximum=None):
+def count_sort(arr, maximum=None):
     # Your code here
+    if len(arr) == 0:
+        return []
+    for k in arr:
+        if k < 0:
+            return 'Error, negative numbers not allowed in Count Sort'
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
     return arr
